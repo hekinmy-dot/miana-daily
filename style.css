@@ -559,35 +559,45 @@ tbody tr td:first-child { color: var(--accent); font-weight: 600; font-family: v
 /* ============================================================
    News Page
    ============================================================ */
-.sector-selector { margin-bottom: 30px; }
+.sector-selector { margin-bottom: 32px; }
+
+.sector-selector h2 {
+    margin-bottom: 16px;
+}
 
 .sector-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
     margin-top: 14px;
 }
 
 .sector-btn {
-    padding: 8px 20px;
+    padding: 14px 16px;
     background: var(--bg-card);
     color: var(--text-secondary);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    font-size: 0.86rem;
+    font-size: 0.88rem;
     font-weight: 500;
     cursor: pointer;
-    transition: all var(--transition);
+    transition: all 0.25s ease;
     font-family: inherit;
     letter-spacing: .3px;
+    position: relative;
+    text-align: center;
+    min-height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .sector-btn:hover {
     background: var(--bg-card-hover);
-    color: var(--text);
+    color: #f0f6fc;
     border-color: var(--accent);
-    transform: translateY(-1px);
-    box-shadow: 0 2px 8px rgba(88,166,255,.15);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(88,166,255,.18);
 }
 
 .sector-btn.active {
@@ -595,7 +605,23 @@ tbody tr td:first-child { color: var(--accent); font-weight: 600; font-family: v
     color: #fff;
     border-color: transparent;
     font-weight: 600;
-    box-shadow: 0 2px 12px rgba(31,111,235,.35);
+    box-shadow: 0 4px 18px rgba(31,111,235,.4);
+    transform: translateY(-2px);
+}
+
+.sector-btn::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    pointer-events: none;
+}
+
+.sector-btn.active::after {
+    background: radial-gradient(ellipse at center, rgba(255,255,255,.1) 0%, transparent 70%);
+    opacity: 1;
 }
 
 .news-section { margin-top: 10px; }
@@ -606,8 +632,8 @@ tbody tr td:first-child { color: var(--accent); font-weight: 600; font-family: v
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding: 22px 26px;
-    transition: all var(--transition);
+    padding: 24px 28px;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     box-shadow: var(--shadow);
     position: relative;
     overflow: hidden;
@@ -618,19 +644,24 @@ tbody tr td:first-child { color: var(--accent); font-weight: 600; font-family: v
     position: absolute;
     left: 0; top: 0; bottom: 0;
     width: 4px;
-    background: var(--accent);
+    background: linear-gradient(to bottom, var(--accent), var(--accent-cyan));
     border-radius: var(--radius) 0 0 var(--radius);
     opacity: 0;
-    transition: opacity var(--transition);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateX(-4px);
 }
 
 .news-item:hover {
     border-color: var(--accent);
-    box-shadow: var(--shadow-lg);
-    transform: translateX(2px);
+    box-shadow: 0 6px 24px rgba(88,166,255,.2);
+    transform: translateX(4px);
+    background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-elevated) 100%);
 }
 
-.news-item:hover::before { opacity: 1; }
+.news-item:hover::before { 
+    opacity: 1; 
+    transform: translateX(0);
+}
 
 .news-headline {
     font-size: 1.05rem;
@@ -912,12 +943,17 @@ footer {
     .footer-content { grid-template-columns: 1fr; }
     .dashboard-grid { grid-template-columns: 1fr; }
     .report-meta { flex-direction: column; gap: 10px; }
-    .sector-buttons { gap: 8px; }
-    .sector-btn { padding: 7px 14px; font-size: 0.8rem; }
+    .sector-buttons { grid-template-columns: repeat(3, 1fr); gap: 6px; }
+    .sector-btn { padding: 10px 12px; font-size: 0.8rem; min-height: 44px; }
     .news-meta { flex-direction: column; align-items: flex-start; gap: 8px; }
     .chart-container { height: 240px; }
     .kpi-row { grid-template-columns: repeat(2, 1fr); }
     .reports-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+    .sector-buttons { grid-template-columns: repeat(2, 1fr); }
+    .sector-btn { font-size: 0.78rem; padding: 8px 10px; min-height: 40px; }
 }
 
 @media (max-width: 480px) {
