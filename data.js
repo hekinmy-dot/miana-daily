@@ -13,8 +13,9 @@ const REPORTS = [
       "商业航天"
     ],
     "down_sectors": [
-      "消费",
-      "地产"
+      "游戏",
+      "医药电商",
+      "创新药"
     ],
     "position": "65%",
     "position_note": "刀盾组合策略",
@@ -65,7 +66,8 @@ const REPORTS = [
       "低空经济"
     ],
     "down_sectors": [
-      "消费"
+      "能源金属",
+      "医药"
     ],
     "position": "—",
     "position_note": "中线布局5月行情",
@@ -83,7 +85,8 @@ const REPORTS = [
       "CPO/光模块"
     ],
     "down_sectors": [
-      "—"
+      "能源金属",
+      "医药"
     ],
     "position": "—",
     "position_note": "300/688优先选股",
@@ -100,7 +103,8 @@ const REPORTS = [
       "半导体"
     ],
     "down_sectors": [
-      "光模块"
+      "能源金属",
+      "医药"
     ],
     "position": "—",
     "position_note": "深强沪弱格局",
@@ -117,7 +121,8 @@ const REPORTS = [
       "原油"
     ],
     "down_sectors": [
-      "AI光模块（-7~8%）"
+      "AI光模块",
+      "光纤"
     ],
     "position": "30%-50%",
     "position_note": "防守策略",
@@ -133,7 +138,11 @@ const REPORTS = [
       "十五五规划方向"
     ],
     "down_sectors": [
-      "科技"
+      "通信",
+      "国防军工",
+      "商业航天",
+      "CPO",
+      "电力"
     ],
     "position": "—",
     "position_note": "等待确定性机会",
@@ -151,7 +160,8 @@ const REPORTS = [
       "新能源车"
     ],
     "down_sectors": [
-      "—"
+      "能源金属",
+      "医药"
     ],
     "position": "—",
     "position_note": "中长线布局",
@@ -168,7 +178,9 @@ const REPORTS = [
       "石油"
     ],
     "down_sectors": [
-      "商业航天（-10%）"
+      "光模块",
+      "CPO",
+      "商业航天"
     ],
     "position": "30%",
     "position_note": "节前3成仓位防守",
@@ -185,7 +197,8 @@ const REPORTS = [
       "电力"
     ],
     "down_sectors": [
-      "—"
+      "银行",
+      "公用事业"
     ],
     "position": "30%-50%",
     "position_note": "跨节3-5成仓位",
@@ -203,7 +216,12 @@ const REPORTS = [
       "科技"
     ],
     "down_sectors": [
-      "—"
+      "氦气",
+      "游戏",
+      "电力",
+      "油气开采",
+      "航运港口",
+      "化工原料"
     ],
     "position": "—",
     "position_note": "10日线生命线规则",
@@ -294,7 +312,8 @@ const REPORTS = [
     ],
     "down_sectors": [
       "港口航运",
-      "黄金"
+      "黄金",
+      "免税店"
     ],
     "position": "4成以内",
     "position_note": "吃好最后几道菜，果盘上桌前离场",
@@ -313,7 +332,8 @@ const REPORTS = [
     ],
     "down_sectors": [
       "商业航天",
-      "存储芯片"
+      "存储芯片",
+      "港口航运"
     ],
     "position": "70%→70%",
     "position_note": "边打边撤，随时准备离场",
@@ -335,8 +355,11 @@ const REPORTS = [
     "down_sectors": [
       "猪肉",
       "保险",
+      "能源金属",
       "白酒",
-      "房地产"
+      "贵金属",
+      "房地产",
+      "医药商业"
     ],
     "position": "50%（从70%降低）",
     "position_note": "全面止盈高位纯科技",
@@ -352,7 +375,11 @@ const REPORTS = [
       "—"
     ],
     "down_sectors": [
-      "全面下杀"
+      "光模块",
+      "光纤",
+      "CPO",
+      "半导体",
+      "PCB"
     ],
     "position": "3成以内",
     "position_note": "提桶跑路，严控仓位",
@@ -371,7 +398,7 @@ const REPORTS = [
       "非光系半导体"
     ],
     "down_sectors": [
-      "光模块（-8~9%跌停）",
+      "光模块",
       "光纤"
     ],
     "position": "30%-40%",
@@ -428,7 +455,9 @@ const REPORTS = [
     "down_sectors": [
       "绿电",
       "水电",
-      "文化传媒"
+      "文化传媒",
+      "IT服务",
+      "电信运营"
     ],
     "position": "50%以下",
     "position_note": "不赌方向，等待变盘",
@@ -444,8 +473,7 @@ const REPORTS = [
       "智能驾驶（唯一逆势抱团）"
     ],
     "down_sectors": [
-      "全线下跌（4569只跌）",
-      "127只跌停创年内新高"
+      "全线下跌（127只跌停）"
     ],
     "position": "3成以下",
     "position_note": "绝对不抄底，反拉即减仓",
