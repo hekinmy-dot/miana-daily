@@ -25,7 +25,7 @@ const REPORTS = [
     "date": "2026-04-14",
     "weekday": "周二",
     "sh_index": "—",
-    "volume": "—",
+    "volume": "2.38万亿（放量2333亿）",
     "tone": "地缘博弈分析，二次探底落空",
     "up_sectors": [
       "—"
@@ -41,7 +41,7 @@ const REPORTS = [
     "date": "2026-04-15",
     "weekday": "周三",
     "sh_index": "电吹风行情",
-    "volume": "—",
+    "volume": "2.42万亿（放量316亿）",
     "tone": "板块快速轮动，主动降仓防守",
     "up_sectors": [
       "医药",
@@ -77,7 +77,7 @@ const REPORTS = [
     "date": "2026-04-21",
     "weekday": "周二",
     "sh_index": "延续强势",
-    "volume": "—",
+    "volume": "2.58万亿（放量1532亿）",
     "tone": "商业航天连涨，CPO高低切，创业板单边牛市",
     "up_sectors": [
       "商业航天",
@@ -96,7 +96,7 @@ const REPORTS = [
     "date": "2026-04-22",
     "weekday": "周三",
     "sh_index": "站上4100点",
-    "volume": "—",
+    "volume": "2.58万亿（放量）",
     "tone": "站上4100但成色不足，消费电子接棒",
     "up_sectors": [
       "消费电子",
@@ -114,7 +114,7 @@ const REPORTS = [
     "date": "2026-04-23",
     "weekday": "周四",
     "sh_index": "高位回调",
-    "volume": "—",
+    "volume": "2.80万亿（放量2447亿）",
     "tone": "地缘和谈反转，AI光模块深度回调",
     "up_sectors": [
       "金银铜",
@@ -171,7 +171,7 @@ const REPORTS = [
     "date": "2026-04-28",
     "weekday": "周二",
     "sh_index": "节前防御轮动",
-    "volume": "—",
+    "volume": "2.55万亿（缩量543亿）",
     "tone": "商业航天重仓大跌10%，节前3成防守",
     "up_sectors": [
       "化工",
@@ -190,7 +190,7 @@ const REPORTS = [
     "date": "2026-04-29",
     "weekday": "周三（节前最后）",
     "sh_index": "节前震荡",
-    "volume": "—",
+    "volume": "2.61万亿（放量584亿）",
     "tone": "5月四大主线预告，跨节3-5成",
     "up_sectors": [
       "电池",
@@ -249,7 +249,7 @@ const REPORTS = [
     "date": "2026-05-06",
     "weekday": "周三（五月开门）",
     "sh_index": "五月开门红",
-    "volume": "—",
+    "volume": "3.25万亿（放量4874亿）",
     "tone": "三星入局CPO，复权三模式拆解",
     "up_sectors": [
       "CPO",
@@ -389,7 +389,7 @@ const REPORTS = [
     "date": "2026-05-15",
     "weekday": "周五",
     "sh_index": "4141支撑有效，震荡修复",
-    "volume": "—",
+    "volume": "3.34万亿（缩量178亿）",
     "tone": "一鲸落万物生，光板块退潮",
     "up_sectors": [
       "智能驾驶",
