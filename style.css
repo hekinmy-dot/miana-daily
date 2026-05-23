@@ -32,6 +32,35 @@ a:hover { text-decoration: underline; }
 
 .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
+/* Chart Section */
+.chart-section {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-bottom: 32px;
+    box-shadow: var(--shadow);
+}
+
+.chart-section h2 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.chart-section h2 i {
+    color: var(--accent-green);
+}
+
+.chart-container {
+    position: relative;
+    height: 300px;
+    width: 100%;
+}
+
 /* Header */
 header {
     text-align: center;

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -44,6 +45,12 @@
         </nav>
 
         <main>
+            <section class="chart-section">
+                <h2><i class="fas fa-chart-line"></i> 成交额走势</h2>
+                <div class="chart-container">
+                    <canvas id="volumeChart"></canvas>
+                </div>
+            </section>
             <section class="reports">
                 <h2><i class="fas fa-newspaper"></i> 日报列表（按日期倒序）</h2>
                 <div class="table-container">
@@ -111,6 +118,82 @@
     </div>
 
     <script src="data.js"></script>
+    <script>
+    // 成交额走势图
+    (function() {
+        var tradingDays = REPORTS.filter(function(r) {
+            return r.volume !== '—' && r.volume !== '';
+        }).reverse();
+        var dates = tradingDays.map(function(r) { return r.date; });
+        var volumes = tradingDays.map(function(r) {
+            var m = r.volume.match(/(\d+\.?\d*)\s*万亿/);
+            return m ? parseFloat(m[1]) : null;
+        }).filter(function(v) { return v !== null; });
+        // align lengths
+        var minLen = Math.min(dates.length, volumes.length);
+        dates = dates.slice(0, minLen);
+        volumes = volumes.slice(0, minLen);
+
+        var ctx = document.getElementById('volumeChart').getContext('2d');
+        var gradient = ctx.createLinearGradient(0, 0, 0, 300);
+        gradient.addColorStop(0, 'rgba(88,166,255,0.28)');
+        gradient.addColorStop(1, 'rgba(88,166,255,0.02)');
+
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: dates,
+                datasets: [{
+                    label: '成交额（万亿）',
+                    data: volumes,
+                    borderColor: '#58a6ff',
+                    backgroundColor: gradient,
+                    borderWidth: 2,
+                    pointRadius: 3,
+                    pointBackgroundColor: '#58a6ff',
+                    pointBorderColor: '#0d1117',
+                    pointBorderWidth: 1.5,
+                    pointHoverRadius: 6,
+                    pointHoverBackgroundColor: '#bc8cff',
+                    fill: true,
+                    tension: 0.35
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        backgroundColor: 'rgba(22,27,34,0.95)',
+                        titleColor: '#c9d1d9',
+                        bodyColor: '#8b949e',
+                        borderColor: '#30363d',
+                        borderWidth: 1,
+                        padding: 10,
+                        callbacks: {
+                            label: function(ctx) {
+                                return ctx.raw.toFixed(2) + ' 万亿';
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        ticks: { color: '#8b949e', maxTicksLimit: 10, maxRotation: 45 },
+                        grid: { color: 'rgba(48,54,61,0.4)' }
+                    },
+                    y: {
+                        ticks: { color: '#8b949e', callback: function(v) { return v + '万亿'; } },
+                        grid: { color: 'rgba(48,54,61,0.4)' },
+                        min: 1.8,
+                        max: 3.8
+                    }
+                }
+            }
+        });
+    })();
+    </script>
     <script>
     (function() {
         var tbody = document.getElementById('reports-tbody');
