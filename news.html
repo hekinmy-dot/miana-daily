@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>板块新闻 - 缅A日报</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1><i class="fas fa-newspaper"></i> 板块新闻</h1>
+                <p class="subtitle">各板块最新资讯 · 每日更新</p>
+            </div>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> 日报列表</a></li>
+                <li><a href="dashboard.html"><i class="fas fa-chart-bar"></i> 数据看板</a></li>
+                <li><a href="news.html" class="active"><i class="fas fa-newspaper"></i> 新闻</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <section class="sector-selector">
+                <h2><i class="fas fa-layer-group"></i> 选择板块</h2>
+                <div class="sector-buttons" id="sector-buttons">
+                </div>
+            </section>
+
+            <section class="news-section">
+                <h2 id="news-title"><i class="fas fa-rss"></i> 电力 · 板块新闻</h2>
+                <div class="news-list" id="news-list">
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-bottom">
+                <p>&copy; 2026 缅A日报 · 生成于 2026-05-23</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="data.js"></script>
+    <script>
+    (function() {
+        var SECTORS = ['电力', '半导体', 'AI算力', '光模块', 'CPO', '汽车', '医药', '消费', '金融', '周期', '新能源', '军工', '其他'];
+        var currentSector = '电力';
+        var sectorBtns = document.getElementById('sector-buttons');
+        var newsList = document.getElementById('news-list');
+        var newsTitle = document.getElementById('news-title');
+
+        // 渲染板块按钮
+        SECTORS.forEach(function(s) {
+            var btn = document.createElement('button');
+            btn.className = 'sector-btn' + (s === currentSector ? ' active' : '');
+            btn.textContent = s;
+            btn.onclick = function() {
+                document.querySelectorAll('.sector-btn').forEach(function(b) { b.classList.remove('active'); });
+                btn.classList.add('active');
+                currentSector = s;
+                newsTitle.innerHTML = '<i class="fas fa-rss"></i> ' + s + ' · 板块新闻';
+                renderNews(s);
+            };
+            sectorBtns.appendChild(btn);
+        });
+
+        function renderNews(sector) {
+            var items = NEWS.filter(function(n) { return n.sector === sector; });
+            if (items.length === 0) {
+                newsList.innerHTML = '<div class="news-empty"><i class="fas fa-inbox"></i><p>暂无该板块新闻数据</p><p style="font-size:0.85rem;color:#8b949e;">新闻数据持续补充中，敬请期待</p></div>';
+                return;
+            }
+            var html = '';
+            items.forEach(function(n) {
+                html += '<div class="news-item">';
+                if (n.link) {
+                    html += '<h3 class="news-headline"><a href="' + n.link + '" target="_blank">' + n.title + '</a></h3>';
+                } else {
+                    html += '<h3 class="news-headline">' + n.title + '</h3>';
+                }
+                html += '<p class="news-summary">' + n.summary + '</p>';
+                html += '<div class="news-meta">';
+                html += '<span class="news-source"><i class="fas fa-globe"></i> ' + n.source + '</span>';
+                html += '<span class="news-time"><i class="fas fa-clock"></i> ' + n.time + '</span>';
+                html += '</div>';
+                html += '</div>';
+            });
+            newsList.innerHTML = html;
+        }
+
+        renderNews(currentSector);
+    })();
+    </script>
+</body>
+</html>
