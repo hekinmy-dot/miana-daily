@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日报详情 - 缅A日报</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> 日报列表</a></li>
+                <li><a href="dashboard.html"><i class="fas fa-chart-bar"></i> 数据看板</a></li>
+            </ul>
+        </nav>
+
+        <main class="report-detail" id="report-detail">
+            <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> 返回日报列表</a>
+            <div id="report-content"></div>
+        </main>
+
+        <footer>
+            <div class="footer-bottom">
+                <p>&copy; 2026 缅A日报 · 生成于 2026-05-23</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="data.js"></script>
+    <script>
+    (function() {
+        var params = new URLSearchParams(window.location.search);
+        var date = params.get('date');
+        var report = REPORTS.find(function(r) { return r.date === date; });
+        
+        if (!report) {
+            document.getElementById('report-content').innerHTML = 
+                '<div style="text-align:center;padding:80px 0;"><h2 style="color:#f85149;">未找到该日报</h2><p style="color:#8b949e;margin-top:12px;">日期: ' + (date || '未指定') + '</p><a href="index.html" style="display:inline-block;margin-top:20px;">返回列表</a></div>';
+            document.title = '未找到 - 缅A日报';
+            return;
+        }
+
+        document.title = report.date + ' 日报 - 缅A日报';
+
+        var upTags = report.up_sectors.filter(function(s) { return s !== '—'; }).map(function(s) { return '<span class="sector-tag up">' + s + '</span>'; }).join('');
+        var downTags = report.down_sectors.filter(function(s) { return s !== '—'; }).map(function(s) { return '<span class="sector-tag down">' + s + '</span>'; }).join('');
+
+        var html = '';
+        html += '<div class="report-header">';
+        html += '<h2><i class="fas fa-file-alt"></i> ' + report.date + ' 日报</h2>';
+        html += '<p style="color:#8b949e;font-size:0.9rem;margin-bottom:12px;">' + report.weekday + '</p>';
+        html += '<div class="report-meta">';
+        html += '<div class="report-meta-item"><span class="label">上证指数：</span><span class="value">' + report.sh_index + '</span></div>';
+        html += '<div class="report-meta-item"><span class="label">成交额：</span><span class="value">' + report.volume + '</span></div>';
+        html += '<div class="report-meta-item"><span class="label">仓位建议：</span><span class="value" style="color:#3fb950;font-weight:700;">' + (report.position !== '—' ? report.position : '—') + '</span></div>';
+        html += '</div>';
+        
+        if (upTags) html += '<div style="margin-top:12px;"><span style="font-size:0.8rem;color:#8b949e;">领涨：</span><div class="sector-tags">' + upTags + '</div></div>';
+        if (downTags) html += '<div style="margin-top:8px;"><span style="font-size:0.8rem;color:#8b949e;">领跌：</span><div class="sector-tags">' + downTags + '</div></div>';
+        html += '</div>';
+
+        html += '<div class="report-section">';
+        html += '<h4><i class="fas fa-bullseye"></i> 大盘定调</h4>';
+        html += '<p style="font-size:1.05rem;color:#d2991d;font-weight:600;">' + report.tone + '</p>';
+        if (report.position_note) {
+            html += '<p style="color:#8b949e;font-size:0.85rem;margin-top:6px;"><i class="fas fa-clipboard-check"></i> ' + report.position_note + '</p>';
+        }
+        html += '</div>';
+
+        html += '<div class="report-section">';
+        html += '<h4><i class="fas fa-align-left"></i> 内容摘要</h4>';
+        html += '<p>' + report.summary + '</p>';
+        html += '</div>';
+
+        html += '<div class="report-section">';
+        html += '<h4><i class="fas fa-info-circle"></i> 关于</h4>';
+        html += '<p style="color:#8b949e;font-size:0.85rem;">该日报完整内容来自 Obsidian 库中的 Markdown 源文件。本站仅展示核心摘要数据。完整内容请查阅源文件：<code style="background:#30363d;padding:2px 6px;border-radius:3px;">D:\\Max UP\\独自升级\\数据库\\投资\\缅A日报（2026）\\' + report.date + '.md</code></p>';
+        html += '</div>';
+
+        document.getElementById('report-content').innerHTML = html;
+    })();
+    </script>
+</body>
+</html>

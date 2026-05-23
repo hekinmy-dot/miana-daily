@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据看板 - 缅A日报</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1><i class="fas fa-chart-pie"></i> 数据看板</h1>
+                <p class="subtitle">缅A日报 (2026) · 关键指标聚合概览</p>
+            </div>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> 日报列表</a></li>
+                <li><a href="dashboard.html" class="active"><i class="fas fa-chart-bar"></i> 数据看板</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <!-- 关键KPI：最新交易日 -->
+            <section>
+                <h2><i class="fas fa-tachometer-alt"></i> 核心指标 <span style="font-size:0.7em;color:#8b949e;font-weight:400;">— 最新交易日 2026-05-22（周四）</span></h2>
+                <div class="kpi-row">
+                    <div class="kpi-item">
+                        <div class="kpi-label">上证指数</div>
+                        <div class="kpi-value up">4112.90 <span style="font-size:0.55em;">+0.87%</span></div>
+                    </div>
+                    <div class="kpi-item">
+                        <div class="kpi-label">深成指</div>
+                        <div class="kpi-value up">15597.30 <span style="font-size:0.55em;">+2.30%</span></div>
+                    </div>
+                    <div class="kpi-item">
+                        <div class="kpi-label">创业板指</div>
+                        <div class="kpi-value up">3908.12 <span style="font-size:0.55em;">+2.56%</span></div>
+                    </div>
+                    <div class="kpi-item">
+                        <div class="kpi-label">成交额</div>
+                        <div class="kpi-value warn">2.90万亿 <span style="font-size:0.55em;">缩量6000亿</span></div>
+                    </div>
+                    <div class="kpi-item">
+                        <div class="kpi-label">仓位建议</div>
+                        <div class="kpi-value down">3成以下</div>
+                    </div>
+                    <div class="kpi-item">
+                        <div class="kpi-label">涨跌比</div>
+                        <div class="kpi-value" style="color:#c9d1d9;">3287 : 2156</div>
+                    </div>
+                    <div class="kpi-item">
+                        <div class="kpi-label">涨停 / 跌停</div>
+                        <div class="kpi-value" style="color:#c9d1d9;">89 <span style="color:#3fb950;">↑</span> / 42 <span style="color:#f85149;">↓</span></div>
+                    </div>
+                    <div class="kpi-item">
+                        <div class="kpi-label">核心支撑位</div>
+                        <div class="kpi-value" style="color:#3fb950;">4068 <span style="font-size:0.55em;">已验证有效</span></div>
+                    </div>
+                </div>
+                <div style="margin-top:16px;padding:12px 16px;background:rgba(188,140,255,0.08);border-left:3px solid #bc8cff;border-radius:4px;font-size:0.9rem;color:#c9d1d9;">
+                    <strong style="color:#bc8cff;">大盘定调：</strong>4068精准支撑反弹，缩量修复<strong style="color:#f85149;">非反转</strong> · 中期调整格局确立 · 120分钟级别技术性反弹 · 反弹减仓、高抛低吸、严控仓位
+                </div>
+            </section>
+
+            <!-- 行情阶段划分 -->
+            <section>
+                <h2><i class="fas fa-history"></i> 行情阶段演变</h2>
+                <div class="dashboard-grid">
+                    <div class="dash-card">
+                        <h3><i class="fas fa-calendar-week"></i> 阶段一：震荡做多（4/13 - 4/24）</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <span class="timeline-date">04-13</span>
+                                <span class="timeline-desc">4006压力位下方震荡做多，刀盾组合策略</span>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="timeline-date">04-15</span>
+                                <span class="timeline-desc">电吹风行情，主动降仓65%→55%防守</span>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="timeline-date">04-20</span>
+                                <span class="timeline-desc">商业航天全线爆发，成为核心主线</span>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="timeline-date">04-22</span>
+                                <span class="timeline-desc">上证站上4100点，深强沪弱格局确立</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dash-card">
+                        <h3><i class="fas fa-fire"></i> 阶段二：主升爆发（4/27 - 5/13）</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <span class="timeline-date">04-30</span>
+                                <span class="timeline-desc">4月收官：创业板涨超15%创十年新高</span>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="timeline-date">05-07</span>
+                                <span class="timeline-desc">上证4180点，成交突破3万亿天量</span>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="timeline-date">05-11</span>
+                                <span class="timeline-desc">创业板3900创11年新高，全民狂欢前夜</span>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="timeline-date">05-13</span>
+                                <span class="timeline-desc">创业板突破4000点！高低切正式开启</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dash-card">
+                        <h3><i class="fas fa-exclamation-triangle"></i> 阶段三：顶部确认 → 中期调整（5/14 - 5/22）</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <span class="timeline-date">05-14</span>
+                                <span class="timeline-desc">4256精准触及压力位后下杀，4254季度顶部确认</span>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="timeline-date">05-15</span>
+                                <span class="timeline-desc">一鲸落万物生：光板块退潮，智能驾驶接力</span>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="timeline-date">05-18</span>
+                                <span class="timeline-desc">缩量调整至4131，W型二次探底4108，4000-4150筑底</span>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="timeline-date">05-19</span>
+                                <span class="timeline-desc">4169点修复，电力净流入48.91亿，科创50+3.81%</span>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="timeline-date">05-20</span>
+                                <span class="timeline-desc">三大指数共振修复，15分钟均线粘黏变盘前夜</span>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="timeline-date">05-21</span>
+                                <span class="timeline-desc">放量杀跌3.5万亿！120分钟中期调整正式确认，127只跌停</span>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="timeline-date">05-22</span>
+                                <span class="timeline-desc"><strong>最新</strong>：4068精准支撑反弹，缩量6000亿非反转，PCB错杀修复</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dash-card">
+                        <h3><i class="fas fa-chart-bar"></i> 成交量趋势摘要</h3>
+                        <div style="font-size:0.85rem;color:#c9d1d9;line-height:1.8;">
+                            <p>启动阶段（4月）：1.5-2.6万亿区间</p>
+                            <p style="color:#3fb950;">主升爆发（5月上旬）：连续6日突破3万亿</p>
+                            <p style="color:#d2991d;">高位震荡（5月中）：2.9-3.5万亿区间</p>
+                            <p style="color:#f85149;">天量杀跌（5/21）：3.5万亿年内第三高 + 尾盘放量17%</p>
+                            <p>反弹缩量（5/22）：2.9万亿（缩量6000亿）</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 仓位变化 -->
+            <section>
+                <h2><i class="fas fa-balance-scale"></i> 仓位管理演变</h2>
+                <div class="dash-card full">
+                    <div style="display:flex;align-items:flex-end;gap:8px;height:180px;padding:0 20px;" id="position-chart">
+                        <div style="display:flex;flex-direction:column;align-items:center;flex:1;height:100%;justify-content:flex-end;">
+                            <div style="background:#3fb950;width:100%;border-radius:4px 4px 0 0;height:81.25%;max-height:81.25%;" title="04-13: 65%"></div>
+                            <span style="font-size:0.65rem;color:#8b949e;margin-top:4px;transform:rotate(-45deg);white-space:nowrap;">04-13</span>
+                        </div>
+                        <div style="display:flex;flex-direction:column;align-items:center;flex:1;height:100%;justify-content:flex-end;">
+                            <div style="background:#d2991d;width:100%;border-radius:4px 4px 0 0;height:68.75%;max-height:68.75%;" title="04-15: 55%"></div>
+                            <span style="font-size:0.65rem;color:#8b949e;margin-top:4px;transform:rotate(-45deg);white-space:nowrap;">04-15</span>
+                        </div>
+                        <div style="display:flex;flex-direction:column;align-items:center;flex:1;height:100%;justify-content:flex-end;">
+                            <div style="background:#d2991d;width:100%;border-radius:4px 4px 0 0;height:50%;max-height:50%;" title="04-28: 30%"></div>
+                            <span style="font-size:0.65rem;color:#8b949e;margin-top:4px;transform:rotate(-45deg);white-space:nowrap;">04-28</span>
+                        </div>
+                        <div style="display:flex;flex-direction:column;align-items:center;flex:1;height:100%;justify-content:flex-end;">
+                            <div style="background:#3fb950;width:100%;border-radius:4px 4px 0 0;height:62.5%;max-height:62.5%;" title="05-07: 50%以下"></div>
+                            <span style="font-size:0.65rem;color:#8b949e;margin-top:4px;transform:rotate(-45deg);white-space:nowrap;">05-07</span>
+                        </div>
+                        <div style="display:flex;flex-direction:column;align-items:center;flex:1;height:100%;justify-content:flex-end;">
+                            <div style="background:#3fb950;width:100%;border-radius:4px 4px 0 0;height:50%;max-height:50%;" title="05-11: 4成"></div>
+                            <span style="font-size:0.65rem;color:#8b949e;margin-top:4px;transform:rotate(-45deg);white-space:nowrap;">05-11</span>
+                        </div>
+                        <div style="display:flex;flex-direction:column;align-items:center;flex:1;height:100%;justify-content:flex-end;">
+                            <div style="background:#d2991d;width:100%;border-radius:4px 4px 0 0;height:87.5%;max-height:87.5%;" title="05-12: 70%"></div>
+                            <span style="font-size:0.65rem;color:#8b949e;margin-top:4px;transform:rotate(-45deg);white-space:nowrap;">05-12</span>
+                        </div>
+                        <div style="display:flex;flex-direction:column;align-items:center;flex:1;height:100%;justify-content:flex-end;">
+                            <div style="background:#f85149;width:100%;border-radius:4px 4px 0 0;height:62.5%;max-height:62.5%;" title="05-13: 50%降低"></div>
+                            <span style="font-size:0.65rem;color:#8b949e;margin-top:4px;transform:rotate(-45deg);white-space:nowrap;">05-13</span>
+                        </div>
+                        <div style="display:flex;flex-direction:column;align-items:center;flex:1;height:100%;justify-content:flex-end;">
+                            <div style="background:#f85149;width:100%;border-radius:4px 4px 0 0;height:37.5%;max-height:37.5%;" title="05-14: 3成"></div>
+                            <span style="font-size:0.65rem;color:#8b949e;margin-top:4px;transform:rotate(-45deg);white-space:nowrap;">05-14</span>
+                        </div>
+                        <div style="display:flex;flex-direction:column;align-items:center;flex:1;height:100%;justify-content:flex-end;">
+                            <div style="background:#f85149;width:100%;border-radius:4px 4px 0 0;height:37.5%;max-height:37.5%;" title="05-21: 3成以下"></div>
+                            <span style="font-size:0.65rem;color:#8b949e;margin-top:4px;transform:rotate(-45deg);white-space:nowrap;">05-21</span>
+                        </div>
+                        <div style="display:flex;flex-direction:column;align-items:center;flex:1;height:100%;justify-content:flex-end;">
+                            <div style="background:#f85149;width:100%;border-radius:4px 4px 0 0;height:37.5%;max-height:37.5%;" title="05-22: 3成以下"></div>
+                            <span style="font-size:0.65rem;color:#8b949e;margin-top:4px;transform:rotate(-45deg);white-space:nowrap;">05-22</span>
+                        </div>
+                    </div>
+                    <p style="text-align:center;color:#8b949e;font-size:0.75rem;margin-top:12px;">
+                        <span style="color:#3fb950;">■ 正常仓位</span>
+                        <span style="color:#d2991d;margin-left:16px;">■ 偏高仓位</span>
+                        <span style="color:#f85149;margin-left:16px;">■ 防守减仓</span>
+                    </p>
+                </div>
+            </section>
+
+            <!-- 板块轮动 -->
+            <section>
+                <h2><i class="fas fa-sync-alt"></i> 主线板块轮动图谱</h2>
+                <div class="dashboard-grid">
+                    <div class="dash-card full">
+                        <div style="overflow-x:auto;">
+                            <table>
+                                <thead>
+                                    <tr><th>阶段</th><th>日期</th><th>核心主线</th><th>风格</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>1. 震荡做多</td><td>04-13 ~ 04-22</td><td>算力 → 商业航天 → 消费电子</td><td>板块轮动，主线确立</td></tr>
+                                    <tr><td>2. 主升爆发</td><td>04-27 ~ 05-09</td><td>光通信/CPO/PCB → 商业航天 → 科技全面爆发</td><td>趋势加速，全面做多</td></tr>
+                                    <tr><td>3. 全民狂欢</td><td>05-11 ~ 05-13</td><td>半导体/存储/先进封装 → 高低切开始</td><td>全民炒股，顶部情绪</td></tr>
+                                    <tr><td>4. 顶部确认</td><td>05-14 ~ 05-18</td><td>智能驾驶/商业航天/电力电池</td><td>钓鱼收网，高低切换</td></tr>
+                                    <tr><td>5. 中期调整</td><td>05-19 ~ 05-22</td><td>电力 → 半导体(国产替代) → PCB修复 → 算电协同</td><td>缩量震荡，防御为主</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 关键点位 -->
+            <section>
+                <h2><i class="fas fa-crosshairs"></i> 核心支撑/压力位</h2>
+                <div class="dashboard-grid">
+                    <div class="dash-card">
+                        <h3><i class="fas fa-arrow-up"></i> 关键压力位</h3>
+                        <table>
+                            <thead><tr><th>点位</th><th>说明</th><th>首次提及</th></tr></thead>
+                            <tbody>
+                                <tr><td>4006</td><td>早期压力位</td><td>04-13</td></tr>
+                                <tr><td>4197</td><td>上证前高</td><td>05-07</td></tr>
+                                <tr><td style="color:#f85149;font-weight:700;">4254</td><td style="color:#f85149;">季度级顶部压力位</td><td>05-14</td></tr>
+                                <tr><td>4300</td><td>矿泉水瓶上半沿目标</td><td>05-15</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="dash-card">
+                        <h3><i class="fas fa-arrow-down"></i> 关键支撑位</h3>
+                        <table>
+                            <thead><tr><th>点位</th><th>说明</th><th>首次提及</th></tr></thead>
+                            <tbody>
+                                <tr><td style="color:#3fb950;">4141</td><td style="color:#3fb950;">15分钟225均线支撑</td><td>05-14</td></tr>
+                                <tr><td>4108</td><td>W型二次探底低点</td><td>05-18</td></tr>
+                                <tr><td style="color:#d2991d;font-weight:700;">4068</td><td style="color:#d2991d;">120-128均线支撑位</td><td>05-21</td></tr>
+                                <tr><td style="color:#f85149;">3880</td><td style="color:#f85149;">极端下跌目标位</td><td>05-14</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-lightbulb"></i> 交易理念</h3>
+                    <p>"活着比赚钱重要" · "浮盈不是盈利" · "不是英雄造时势，是时势造英雄"</p>
+                </div>
+                <div class="footer-section">
+                    <h3><i class="fas fa-book"></i> 核心框架</h3>
+                    <p>10日线生命线 · 15分钟技术买点 · 财报五维分析 · 钓鱼打窝理论</p>
+                </div>
+                <div class="footer-section">
+                    <h3><i class="fas fa-shield-alt"></i> 免责声明</h3>
+                    <p>所有内容为个人交易心得分享，不构成任何投资建议。投资有风险，入市需谨慎。</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 缅A日报 · 生成于 2026-05-23</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
