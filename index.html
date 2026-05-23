@@ -107,7 +107,7 @@
     (function() {
         var tradingDays = REPORTS.filter(function(r) {
             return r.volume !== '—' && r.volume !== '';
-        }).reverse();
+        });
         var dates = tradingDays.map(function(r) { return r.date; });
         var volumes = tradingDays.map(function(r) {
             var m = r.volume.match(/(\d+\.?\d*)\s*万亿/);

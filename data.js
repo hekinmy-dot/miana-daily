@@ -511,7 +511,7 @@ const REPORTS = [
 ];
 
 // 板块新闻数据
-const NEWS = [[
+const NEWS = [
   {
     "sector": "半导体",
     "title": "三重驱动共振,芯片行业迎机遇!",
@@ -824,4 +824,4 @@ const NEWS = [[
     "time": "2026-05-19",
     "link": ""
   }
-]];
+];
