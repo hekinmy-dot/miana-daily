@@ -23,7 +23,7 @@ const REPORTS = [
   },
   {
     "date": "2026-04-14",
-    "weekday": "周日特辑",
+    "weekday": "周二",
     "sh_index": "—",
     "volume": "—",
     "tone": "地缘博弈分析，二次探底落空",
@@ -39,7 +39,7 @@ const REPORTS = [
   },
   {
     "date": "2026-04-15",
-    "weekday": "周二",
+    "weekday": "周三",
     "sh_index": "电吹风行情",
     "volume": "—",
     "tone": "板块快速轮动，主动降仓防守",
@@ -57,7 +57,7 @@ const REPORTS = [
   },
   {
     "date": "2026-04-20",
-    "weekday": "周日",
+    "weekday": "周一",
     "sh_index": "4082点（+0.76%）",
     "volume": "2.58万亿（放量1532亿）",
     "tone": "商业航天全线爆发，中线博弈5月行情",
@@ -75,7 +75,7 @@ const REPORTS = [
   },
   {
     "date": "2026-04-21",
-    "weekday": "周一",
+    "weekday": "周二",
     "sh_index": "延续强势",
     "volume": "—",
     "tone": "商业航天连涨，CPO高低切，创业板单边牛市",
@@ -94,7 +94,7 @@ const REPORTS = [
   },
   {
     "date": "2026-04-22",
-    "weekday": "周二",
+    "weekday": "周三",
     "sh_index": "站上4100点",
     "volume": "—",
     "tone": "站上4100但成色不足，消费电子接棒",
@@ -112,7 +112,7 @@ const REPORTS = [
   },
   {
     "date": "2026-04-23",
-    "weekday": "周三",
+    "weekday": "周四",
     "sh_index": "高位回调",
     "volume": "—",
     "tone": "地缘和谈反转，AI光模块深度回调",
@@ -130,7 +130,7 @@ const REPORTS = [
   },
   {
     "date": "2026-04-24",
-    "weekday": "周四",
+    "weekday": "周五",
     "sh_index": "跌0.33%",
     "volume": "2.64万亿（缩量）",
     "tone": "4063支撑有效但无博弈价值",
@@ -150,7 +150,7 @@ const REPORTS = [
   },
   {
     "date": "2026-04-27",
-    "weekday": "周日（含特辑）",
+    "weekday": "周一（含特辑）",
     "sh_index": "延续震荡",
     "volume": "—",
     "tone": "波斯湾冲突升温，英伟达财报超预期",
@@ -169,7 +169,7 @@ const REPORTS = [
   },
   {
     "date": "2026-04-28",
-    "weekday": "周一",
+    "weekday": "周二",
     "sh_index": "节前防御轮动",
     "volume": "—",
     "tone": "商业航天重仓大跌10%，节前3成防守",
@@ -188,7 +188,7 @@ const REPORTS = [
   },
   {
     "date": "2026-04-29",
-    "weekday": "周二（节前最后）",
+    "weekday": "周三（节前最后）",
     "sh_index": "节前震荡",
     "volume": "—",
     "tone": "5月四大主线预告，跨节3-5成",
@@ -206,7 +206,7 @@ const REPORTS = [
   },
   {
     "date": "2026-04-30",
-    "weekday": "周三（4月收官）",
+    "weekday": "周四（4月收官）",
     "sh_index": "全月牛市主线确立",
     "volume": "—",
     "tone": "创业板涨超15%创十年新高",
@@ -229,7 +229,7 @@ const REPORTS = [
   },
   {
     "date": "2026-05-04",
-    "weekday": "五一特辑",
+    "weekday": "周一（五一特辑）",
     "sh_index": "假期全球数据",
     "volume": "—",
     "tone": "纳指+2.14%，阿联酋退出欧佩克+",
@@ -247,7 +247,7 @@ const REPORTS = [
   },
   {
     "date": "2026-05-06",
-    "weekday": "周二（五月开门）",
+    "weekday": "周三（五月开门）",
     "sh_index": "五月开门红",
     "volume": "—",
     "tone": "三星入局CPO，复权三模式拆解",
@@ -264,7 +264,7 @@ const REPORTS = [
   },
   {
     "date": "2026-05-07",
-    "weekday": "周三",
+    "weekday": "周四",
     "sh_index": "4180点（收于日内最高）",
     "volume": "3万亿（天量）",
     "tone": "距前高仅一步之遥，PCB/ABF全线爆发",
@@ -283,7 +283,7 @@ const REPORTS = [
   },
   {
     "date": "2026-05-09",
-    "weekday": "周末特辑",
+    "weekday": "周六（周末特辑）",
     "sh_index": "—",
     "volume": "—",
     "tone": "特朗普访华催化，科技线最后一波高潮预警",
@@ -407,7 +407,7 @@ const REPORTS = [
   },
   {
     "date": "2026-05-18",
-    "weekday": "周日特辑",
+    "weekday": "周一（特辑）",
     "sh_index": "4131点（缩量调整）",
     "volume": "2.89万亿（缩量第一天）",
     "tone": "破位进入震荡调整，4000-4150区间筑底",
@@ -424,7 +424,7 @@ const REPORTS = [
   },
   {
     "date": "2026-05-19",
-    "weekday": "周一",
+    "weekday": "周二",
     "sh_index": "4169点（+0.92%）",
     "volume": "2.89万亿",
     "tone": "三大指数不同步，电力领涨",
@@ -444,7 +444,7 @@ const REPORTS = [
   },
   {
     "date": "2026-05-20",
-    "weekday": "周二",
+    "weekday": "周三",
     "sh_index": "4162点（-0.18%）",
     "volume": "2.95万亿",
     "tone": "三大指数共振修复！变盘前夜",
@@ -465,7 +465,7 @@ const REPORTS = [
   },
   {
     "date": "2026-05-21",
-    "weekday": "周三",
+    "weekday": "周四",
     "sh_index": "4100点（-1.47%放量杀跌）",
     "volume": "3.5万亿（年内第三高）",
     "tone": "120分钟级别中期调整正式确认！",
@@ -481,7 +481,7 @@ const REPORTS = [
   },
   {
     "date": "2026-05-22",
-    "weekday": "周四",
+    "weekday": "周五",
     "sh_index": "4112点（+0.87%修复反弹）",
     "volume": "2.90万亿（缩量6000亿）",
     "tone": "4068精准支撑反弹，缩量修复非反转",
