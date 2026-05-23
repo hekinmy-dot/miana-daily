@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>缅A日报 (2026)</title>
+    <title>日报列表 - 缅A日报</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -54,24 +54,7 @@
             </section>
             <section class="reports">
                 <h2><i class="fas fa-newspaper"></i> 日报列表（按日期倒序）</h2>
-                <div class="table-container">
-                    <table class="reports-table">
-                        <thead>
-                            <tr>
-                                <th>日期</th>
-                                <th>星期</th>
-                                <th>上证指数</th>
-                                <th>成交额</th>
-                                <th>大盘定调</th>
-                                <th>领涨板块</th>
-                                <th>领跌板块</th>
-                                <th>仓位</th>
-                                <th>详情</th>
-                            </tr>
-                        </thead>
-                        <tbody id="reports-tbody"></tbody>
-                    </table>
-                </div>
+                <div class="reports-grid" id="reports-grid"></div>
             </section>
 
             <section class="key-themes">
@@ -197,7 +180,7 @@
     </script>
     <script>
     (function() {
-        var tbody = document.getElementById('reports-tbody');
+        var reportsGrid = document.getElementById('reports-grid');
         var dateRange = document.getElementById('date-range');
         
         // 倒序排列
@@ -207,19 +190,35 @@
         reversed.forEach(function(r) {
             var up = r.up_sectors[0] === '—' ? '—' : r.up_sectors.slice(0,2).join(', ');
             var down = r.down_sectors[0] === '—' ? '—' : r.down_sectors.slice(0,2).join(', ');
-            var toneShort = r.tone.length > 22 ? r.tone.substring(0,22) + '...' : r.tone;
-            var row = document.createElement('tr');
-            row.innerHTML = 
-                '<td><strong>' + r.date + '</strong></td>' +
-                '<td>' + r.weekday + '</td>' +
-                '<td>' + r.sh_index + '</td>' +
-                '<td>' + r.volume + '</td>' +
-                '<td><span class="tone-badge" title="' + r.tone.replace(/"/g,'&quot;') + '">' + toneShort + '</span></td>' +
-                '<td>' + up + '</td>' +
-                '<td>' + down + '</td>' +
-                '<td><span class="position-badge">' + (r.position !== '—' ? r.position : '—') + '</span></td>' +
-                '<td><a href="report.html?date=' + r.date + '" class="btn-view">查看详情</a></td>';
-            tbody.appendChild(row);
+            var toneShort = r.tone.length > 28 ? r.tone.substring(0,28) + '...' : r.tone;
+            
+            var card = document.createElement('div');
+            card.className = 'report-card';
+            
+            var upTags = r.up_sectors.filter(function(s) { return s !== '—'; }).map(function(s) { return '<span class="sector-tag up">' + s + '</span>'; }).join('');
+            var downTags = r.down_sectors.filter(function(s) { return s !== '—'; }).map(function(s) { return '<span class="sector-tag down">' + s + '</span>'; }).join('');
+            
+            card.innerHTML = 
+                '<div class="report-card-header">' +
+                '<div class="report-date"><i class="fas fa-calendar-day"></i> ' + r.date + ' <span class="report-weekday">' + r.weekday + '</span></div>' +
+                '<div class="report-position"><span class="position-badge">' + (r.position !== '—' ? r.position : '—') + '</span></div>' +
+                '</div>' +
+                '<div class="report-card-body">' +
+                '<div class="report-stats">' +
+                '<div class="stat"><span class="label">上证指数</span><span class="value">' + r.sh_index + '</span></div>' +
+                '<div class="stat"><span class="label">成交额</span><span class="value">' + r.volume + '</span></div>' +
+                '</div>' +
+                '<div class="report-tone"><span class="tone-label">大盘定调</span><span class="tone-text" title="' + r.tone.replace(/"/g,'&quot;') + '">' + toneShort + '</span></div>' +
+                '<div class="report-sectors">' +
+                (upTags ? '<div class="sector-row"><span class="sector-label up">领涨</span>' + upTags + '</div>' : '') +
+                (downTags ? '<div class="sector-row"><span class="sector-label down">领跌</span>' + downTags + '</div>' : '') +
+                '</div>' +
+                '</div>' +
+                '<div class="report-card-footer">' +
+                '<a href="report.html?date=' + r.date + '" class="btn-view"><i class="fas fa-external-link-alt"></i> 查看详情</a>' +
+                '</div>';
+            
+            reportsGrid.appendChild(card);
         });
     })();
     </script>
