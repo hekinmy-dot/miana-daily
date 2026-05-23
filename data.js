@@ -152,7 +152,7 @@ const REPORTS = [
     "date": "2026-04-27",
     "weekday": "周一（含特辑）",
     "sh_index": "延续震荡",
-    "volume": "—",
+    "volume": "2.58万亿（放量1500亿）",
     "tone": "波斯湾冲突升温，英伟达财报超预期",
     "up_sectors": [
       "碳纤维",
@@ -208,7 +208,7 @@ const REPORTS = [
     "date": "2026-04-30",
     "weekday": "周四（4月收官）",
     "sh_index": "全月牛市主线确立",
-    "volume": "—",
+    "volume": "2.74万亿（放量1508亿）",
     "tone": "创业板涨超15%创十年新高",
     "up_sectors": [
       "芯片",
@@ -256,7 +256,10 @@ const REPORTS = [
       "光模块"
     ],
     "down_sectors": [
-      "—"
+      "石油石化",
+      "社会服务",
+      "旅游",
+      "银行"
     ],
     "position": "—",
     "position_note": "前复权统一使用",
@@ -416,7 +419,12 @@ const REPORTS = [
       "长鑫存储概念"
     ],
     "down_sectors": [
-      "—"
+      "稀土概念",
+      "贵金属",
+      "体育",
+      "农林牧渔",
+      "轻工制造",
+      "工程机械"
     ],
     "position": "50%以下",
     "position_note": "日内做T，等待方向",

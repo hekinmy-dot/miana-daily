@@ -122,6 +122,7 @@
         
         reversed.forEach(function(r) {
             var up = r.up_sectors[0] === '—' ? '—' : r.up_sectors.slice(0,2).join(', ');
+            var down = r.down_sectors[0] === '—' ? '—' : r.down_sectors.slice(0,2).join(', ');
             var toneShort = r.tone.length > 22 ? r.tone.substring(0,22) + '...' : r.tone;
             var row = document.createElement('tr');
             row.innerHTML = 
@@ -131,6 +132,7 @@
                 '<td>' + r.volume + '</td>' +
                 '<td><span class="tone-badge" title="' + r.tone.replace(/"/g,'&quot;') + '">' + toneShort + '</span></td>' +
                 '<td>' + up + '</td>' +
+                '<td>' + down + '</td>' +
                 '<td><span class="position-badge">' + (r.position !== '—' ? r.position : '—') + '</span></td>' +
                 '<td><a href="report.html?date=' + r.date + '" class="btn-view">查看详情</a></td>';
             tbody.appendChild(row);
