@@ -565,63 +565,44 @@ tbody tr td:first-child { color: var(--accent); font-weight: 600; font-family: v
     margin-bottom: 16px;
 }
 
+/* 72板块紧凑标签网格 */
 .sector-buttons {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
     margin-top: 14px;
 }
 
-.sector-btn {
-    padding: 14px 16px;
+.sector-chip {
+    padding: 7px 13px;
     background: var(--bg-card);
     color: var(--text-secondary);
     border: 1px solid var(--border);
-    border-radius: var(--radius);
-    font-size: 0.88rem;
+    border-radius: 20px;
+    font-size: 0.78rem;
     font-weight: 500;
     cursor: pointer;
-    transition: all 0.25s ease;
+    transition: all 0.2s ease;
     font-family: inherit;
-    letter-spacing: .3px;
+    white-space: nowrap;
+    line-height: 1.4;
     position: relative;
-    text-align: center;
-    min-height: 52px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    user-select: none;
 }
 
-.sector-btn:hover {
+.sector-chip:hover {
     background: var(--bg-card-hover);
     color: #f0f6fc;
     border-color: var(--accent);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 16px rgba(88,166,255,.18);
+    box-shadow: 0 2px 8px rgba(88,166,255,.15);
 }
 
-.sector-btn.active {
+.sector-chip.active {
     background: linear-gradient(135deg, #1f6feb 0%, #388bfd 100%);
     color: #fff;
     border-color: transparent;
     font-weight: 600;
-    box-shadow: 0 4px 18px rgba(31,111,235,.4);
-    transform: translateY(-2px);
-}
-
-.sector-btn::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: var(--radius);
-    opacity: 0;
-    transition: opacity 0.25s ease;
-    pointer-events: none;
-}
-
-.sector-btn.active::after {
-    background: radial-gradient(ellipse at center, rgba(255,255,255,.1) 0%, transparent 70%);
-    opacity: 1;
+    box-shadow: 0 2px 12px rgba(31,111,235,.35);
 }
 
 .news-section { margin-top: 10px; }
@@ -727,6 +708,25 @@ tbody tr td:first-child { color: var(--accent); font-weight: 600; font-family: v
 }
 
 .news-empty p { font-size: 1rem; margin-top: 8px; }
+
+/* 新闻卡片关联板块标签 */
+.news-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-left: 8px;
+}
+
+.news-tag {
+    padding: 2px 8px;
+    background: rgba(88,166,255,.08);
+    border: 1px solid rgba(88,166,255,.15);
+    border-radius: 12px;
+    font-size: 0.7rem;
+    color: var(--accent);
+    font-weight: 500;
+    white-space: nowrap;
+}
 
 /* ============================================================
    Dashboard Highlight Section
@@ -943,8 +943,7 @@ footer {
     .footer-content { grid-template-columns: 1fr; }
     .dashboard-grid { grid-template-columns: 1fr; }
     .report-meta { flex-direction: column; gap: 10px; }
-    .sector-buttons { grid-template-columns: repeat(3, 1fr); gap: 6px; }
-    .sector-btn { padding: 10px 12px; font-size: 0.8rem; min-height: 44px; }
+    .sector-chip { padding: 6px 10px; font-size: 0.74rem; }
     .news-meta { flex-direction: column; align-items: flex-start; gap: 8px; }
     .chart-container { height: 240px; }
     .kpi-row { grid-template-columns: repeat(2, 1fr); }
@@ -952,8 +951,7 @@ footer {
 }
 
 @media (max-width: 480px) {
-    .sector-buttons { grid-template-columns: repeat(2, 1fr); }
-    .sector-btn { font-size: 0.78rem; padding: 8px 10px; min-height: 40px; }
+    .sector-chip { padding: 5px 8px; font-size: 0.72rem; }
 }
 
 @media (max-width: 480px) {
