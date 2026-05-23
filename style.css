@@ -605,6 +605,40 @@ tbody tr td:first-child { color: var(--accent); font-weight: 600; font-family: v
     box-shadow: 0 2px 12px rgba(31,111,235,.35);
 }
 
+.sector-chip .badge {
+    display: inline-block;
+    background: rgba(88,166,255,.18);
+    color: var(--accent);
+    font-size: 0.7rem;
+    font-weight: 600;
+    min-width: 18px;
+    height: 18px;
+    line-height: 18px;
+    border-radius: 9px;
+    text-align: center;
+    padding: 0 5px;
+    margin-left: 2px;
+    vertical-align: middle;
+    transition: all var(--transition);
+}
+.sector-chip.active .badge {
+    background: rgba(255,255,255,.25);
+    color: #fff;
+}
+.sector-chip.empty {
+    opacity: 0.45;
+}
+.sector-chip.empty .badge {
+    background: rgba(139,148,158,.12);
+    color: var(--text-muted);
+}
+.sector-chip.empty:hover { opacity: 0.7; }
+.sector-chip.empty.active { opacity: 1; }
+.sector-chip.empty.active .badge {
+    background: rgba(255,255,255,.15);
+    color: rgba(255,255,255,.7);
+}
+
 .news-section { margin-top: 10px; }
 
 .news-list { display: flex; flex-direction: column; gap: 16px; }

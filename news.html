@@ -55,11 +55,17 @@
         var newsList = document.getElementById('news-list');
         var newsTitle = document.getElementById('news-title');
 
-        // 渲染板块按钮（紧凑标签布局）
+        // 统计各板块新闻数量
+        var sectorCounts = {};
+        SECTORS.forEach(function(s) { sectorCounts[s] = 0; });
+        NEWS.forEach(function(n) { if (sectorCounts[n.sector] !== undefined) sectorCounts[n.sector]++; });
+
+        // 渲染板块按钮（紧凑标签布局 + 新闻数量徽标）
         SECTORS.forEach(function(s) {
             var btn = document.createElement('button');
-            btn.className = 'sector-chip' + (s === currentSector ? ' active' : '');
-            btn.textContent = s;
+            var count = sectorCounts[s] || 0;
+            btn.className = 'sector-chip' + (s === currentSector ? ' active' : '') + (count === 0 ? ' empty' : '');
+            btn.innerHTML = s + ' <span class="badge">' + count + '</span>';
             btn.onclick = function() {
                 document.querySelectorAll('.sector-chip').forEach(function(b) { b.classList.remove('active'); });
                 btn.classList.add('active');
